@@ -1,0 +1,109 @@
+body {
+ margin: 0;
+ font-family: 'Cormorant Garamond', serif;
+ background-color: rgba(241, 241, 241, 0.8);
+}
+
+.container {
+ display: flex;
+ align-items: center;
+ flex-direction: column;
+}
+
+/*images*/
+.flex-img div {
+ display: flex;
+ justify-content: space-between;
+}
+
+.profile-logo,
+.chat-icon {
+ width: 10%;
+}
+
+.logo {
+ width: 20%
+}
+
+
+
+.Teddy,
+.Rex,
+.Bella {
+ border-radius: 9px;
+ width: 85%;
+ height:80vh;
+ display: block;
+ margin: 0 auto;
+ margin-top: .8em;
+}
+
+
+
+.like,.nope {
+ width: 29%;
+ position: absolute;
+ left: 18%;
+ top: 13%;
+ transform: rotate(-20deg);
+ display:none;
+}
+
+/* typoghraphy */
+.name,
+.bio {
+   position: absolute;
+   left: 18%;
+   color: white;
+}
+.name {
+ top: 78%;
+ font-weight: bold;
+ font-size: 1.2rem;
+ opacity: .9;
+}
+
+.bio {
+ margin-top:.5em; 
+ top: 83%;
+ font-size: .9rem;
+ opacity: .7;
+}
+
+
+/* icons */
+.icons {
+ margin-top: .4em;
+ cursor: pointer;
+
+}
+.icon-like,.icon-nope {
+   background: white;
+   padding: .9em;
+   width: 30px;
+   border-radius: 2em;
+}
+
+.icon-nope{
+ margin-right: 4em;
+}
+
+.icon-nope:hover,
+.icon-like:hover {
+ background: rgba(206, 206, 206, 0.8);
+}
+
+@media (min-width:463px){
+ body{
+   /* background: black; */
+   background: linear-gradient(90deg,#260202,#6e6666)
+ }
+ .like,.nope{
+   width:10%;
+  left: 38.4%;
+ }
+ .name,.bio{
+  left:38.4%;
+  
+ }
+}
