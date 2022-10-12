@@ -12,30 +12,58 @@ const nope = document.getElementById('nope');
 const picLike = document.getElementById('pic-like');
 const picNope = document.getElementById('pic-nope');
 
+//taking the end message div
+const endMessage = document.getElementById('ending-message');
 
-// getting the the names of the dogs from the data.js file
-// dog[0] = Teddy
-//dog[1] = Bella
-//dog[2] = Rex
-const newDog = [dogs[0],dogs[1],dogs[2]];
+
+const newDog = ['Teddy','Bella','Rex'];
 
 function getNewDog(){
- const newDogData = newDog.shift()
+ const newDogData = dogs.shift()
+ 
  
  // here I am  checking if there is dogs left in the array. if that is true a new instance of Dogs is created and if there is no more dogs an emoty array is returned
  return newDogData ? new Dogs(newDogData) : [];
 }
 
-let newDogs = getNewDog()
 
+
+let newDogs = getNewDog()
 //this function render the dogs on the screen
 
+// this function will render when there is no more dogs in the array
+function ending(){
+  return ` 
+   <div>
+      <p class="ending-text">You have reached the end Congratulations</p>
+      <img class="ending-img" src="images/happy emoji.jpg">
+      <p class="ending-text2">
+        Refresh the site again if you want
+        change your opnion about the dogs
+      </p>
+
+    </div>`
+}
+
 function render(){ 
- document.getElementById('dog')
+
+  
+  if(newDogs.length === 0){
+    like.style.display = 'none'
+    nope.style.display = 'none'
+    document.getElementById('dog')
+    .remove()
+    newDogs.push(  endMessage.innerHTML = ending())
+  }else{
+     document.getElementById('dog')
  .innerHTML = newDogs.getDogHtml()
+  }
+
+ 
 }
 
 render()
+
 
 
 let isWaiting = false
@@ -49,17 +77,16 @@ function activataLike(){
     setTimeout(()=>{
       if(newDog.length > 0){
         newDogs = getNewDog()
-        
         render()
-        la.style.opacity =
         picLike.style.display = 'none'
         isWaiting = false
 
     
       }
     },2000)
-  }
    
+   
+  }
 }
 
 like.addEventListener('click',activataLike);
@@ -78,7 +105,8 @@ function activataNope(){
     picNope.style.display = 'none'
     isWaiting = false
     
-   }
+   } 
+
    },2000)
   }
   

@@ -49,6 +49,20 @@ body {
  display:none;
 }
 
+.ending-message div{
+   background-image: url('images/happy\ emoji.jpg');
+   filter: blur(90%);
+   padding-top: 6em;
+   
+   
+}
+
+.ending-img{
+   width:100%;
+   
+}
+
+
 /* typoghraphy */
 .name,
 .bio {
@@ -68,6 +82,19 @@ body {
  top: 83%;
  font-size: .9rem;
  opacity: .7;
+}
+.ending-text,
+.ending-text2 {
+   font-size: 2rem;
+   color: white;
+}
+
+.ending-text {
+   position: absolute;
+   top: 4%;
+}
+.ending-text2{
+   margin-top: 0;
 }
 
 
@@ -91,11 +118,14 @@ body {
 .icon-nope:hover,
 .icon-like:hover {
  background: rgba(206, 206, 206, 0.8);
+
 }
+
+
 
 @media (min-width:463px){
  body{
-   /* background: black; */
+   
    background: linear-gradient(90deg,#260202,#6e6666)
  }
  .like,.nope{
@@ -105,5 +135,11 @@ body {
  .name,.bio{
   left:38.4%;
   
+ }
+ .ending-message div,
+ .ending-img{
+ 
+   width: 60vw;
+   margin: 0 auto;
  }
 }

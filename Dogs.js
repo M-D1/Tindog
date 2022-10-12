@@ -4,11 +4,12 @@ class Dogs {
   Object.assign(this,data);
  }
  getDogHtml(){
+  const {name, avatar, bio} = this
   return`
   <div>
-    <img class="${this.name}" src="${this.avatar}">
-    <p class="name">${this.name}</p>
-    <p class="bio">${this.bio}</p>
+    <img class="${name}" src="${avatar}">
+    <p class="name">${name}</p>
+    <p class="bio">${bio}</p>
   </div>
   `
  }
